@@ -57,11 +57,8 @@
 </head>
 <body>
 	<div class="loginForm">
-		<section class="sec01">
-			<%-- <img src="${ctp}/resources/images/mainLogin/test01.jpg" /> --%>
-		</section>
-		<section class="sec02">
-			<form name="myform" method="post">
+		<form name="myform" method="post">
+			<section class="sec01">
 				<div class="text-center mb-5"><img src="${ctp}/images/memberLogin/logo03.png" class="logo" style="width:300px">회원가입</div>
 				<!-- 반려동물 커뮤니티 사이트, 커플 일정 공유 캘린더 --><!-- 커플 일정공유 캘린더, 친구맺어진 사람들끼리만 공유, 한쪽이 수정중이면 다른 한쪽은 수정불가 -->
 				<!-- 반려동물이용 시설, 내가 찜한 목록 -->
@@ -92,10 +89,101 @@
 				    <label for="name">성명 <span style="color:#DB4455"><b>*</b></span></label>
 				    <input type="text" class="form-control" id="name" placeholder="성명을 입력하세요." name="name" required />
 			    </div>
-			    
+			    <div class="form-group">
+			      <label for="email1">Email address <span style="color:#DB4455"><b>*</b></span></label>
+			        <div class="input-group mb-3">
+			          <input type="text" class="form-control" placeholder="Email을 입력하세요." id="email1" name="email1" required />
+			          <div class="input-group-append">
+			            <select name="email2" class="custom-select">
+			              <option value="@naver.com" selected>@naver.com</option>
+			              <option value="@hanmail.net">@hanmail.net</option>
+			              <option value="@hotmail.com">@hotmail.com</option>
+			              <option value="@gmail.com">@gmail.com</option>
+			              <option value="@nate.com">@nate.com</option>
+			              <option value="@yahoo.com">@yahoo.com</option>
+			            </select>
+			          </div>
+			        </div>
+			    </div>
+			    <div class="form-group">
+			      <div class="form-check-inline">
+			        <span class="input-group-text">성별 :</span> &nbsp; &nbsp;
+			        <label class="form-check-label">
+			          <input type="radio" class="form-check-input" name="gender" value="남자" checked>남자
+			        </label>
+			      </div>
+			      <div class="form-check-inline">
+			        <label class="form-check-label">
+			          <input type="radio" class="form-check-input" name="gender" value="여자">여자
+			        </label>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="birthday">생일</label>
+			      <input type="date" name="birthday" value="<%=java.time.LocalDate.now() %>" class="form-control"/>
+			    </div>
+			    <div class="form-group">
+			      <div class="input-group mb-3">
+			        <div class="input-group-prepend">
+			          <span class="input-group-text">전화번호 :</span> &nbsp;&nbsp;
+			          <!-- 
+			            <select name="tel1" class="custom-select">
+			              <option value="010" selected>010</option>
+			              <option value="02">02</option>
+			              <option value="031">"031"</option>
+			              <option value="032">032</option>
+			              <option value="041">041</option>
+			              <option value="042">042</option>
+			              <option value="043">043</option>
+			              <option value="051">051</option>
+			              <option value="052">052</option>
+			              <option value="061">061</option>
+			              <option value="062">062</option>
+			            </select>-
+			             -->
+			        </div>
+			        <input type="text" name="tel1" size=3 maxlength=3 class="form-control" required/>-
+			        <input type="text" name="tel2" size=4 maxlength=4 class="form-control" required/>-
+			        <input type="text" name="tel3" size=4 maxlength=4 class="form-control" required/>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="address">주소 <span style="color:#DB4455"><b>*</b></span></label>
+			      <div class="input-group mb-1">
+			        <input type="text" name="postcode" id="sample6_postcode" placeholder="우편번호" class="form-control" required>
+			        <div class="input-group-append">
+			          <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn btn-secondary">
+			        </div>
+			      </div>
+			      <input type="text" name="roadAddress" id="sample6_address" size="50" placeholder="주소" class="form-control mb-1" required>
+			      <div class="input-group mb-1">
+			        <input type="text" name="detailAddress" id="sample6_detailAddress" placeholder="상세주소" class="form-control"> &nbsp;&nbsp;
+			        <div class="input-group-append">
+			          <input type="text" name="extraAddress" id="sample6_extraAddress" placeholder="참고항목" class="form-control">
+			        </div>
+			      </div>
+			    </div>
+			</section>
+			<section class="sec02">
+				<div  class="form-group">
+				    프로필 사진 (귀여운 내 짝꿍을 자랑해보세요!)(파일용량:2MByte이내) :
+				    <input type="file" name="fName" id="file" onchange="imgCheck(this)" class="form-control-file border mb-3"/>
+				    <img id="demoImg" width="200px"/>
+				    <hr/>
+			    </div>
+			    <div class="form-group">
+				    <label for="name">반려동물 이름 <span style="color:#DB4455"><b>*</b></span></label>
+				    <input type="text" class="form-control" id="name" placeholder="반려동물의 이름을 입력해주세요." name="petName" required />
+			    </div>
+			    <div class="form-group">
+				    <label for="birthday">반려동물 생일</label>
+				    <input type="date" name="petBirthday" value="<%=java.time.LocalDate.now() %>" class="form-control"/>
+			    </div>
+			    <!-- 특이사항 적을지 말지? -->
+			    <hr/>
 			    <div class="btnSec"><button type="submit" class="btn btn-success mb-2">가입하기</button></div>
-		  	</form>
-		</section>
+			</section>
+	  	</form>
 	</div>
 </body>
 </html>

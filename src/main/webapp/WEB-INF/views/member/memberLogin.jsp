@@ -50,9 +50,9 @@
 		<section class="sec02">
 			<form name="myform" method="post">
 				<div class="text-center mb-5"><img src="${ctp}/images/memberLogin/logo03.png" class="logo" style="width:300px">로그인</div>
-		    	<input type="text" name="mid" placeholder="User ID" autofocus required class="form-control mb-1" style="height:45px"/>
+		    	<input type="text" value="admin" name="mid" placeholder="User ID" autofocus required class="form-control mb-1" style="height:45px"/>
 		       	<input type="checkbox" name="idSave" checked class="mb-3 ml-2"/> 아이디 저장
-			    <input type="password" name="pwd" placeholder="Password" required class="form-control mb-4" style="height:45px"/>
+			    <input type="password" value="1234" name="pwd" placeholder="Password" required class="form-control mb-4" style="height:45px"/>
 			    <div class="btnSec"><button type="submit" class="btn btn-success mb-2">로그인</button></div>
 				<div class="btnSec"><button type="button" onclick="location.href='${ctp}/memberJoin';" class="btn btn-success">회원가입</button></div>
 		  	</form>

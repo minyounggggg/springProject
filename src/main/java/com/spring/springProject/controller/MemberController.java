@@ -31,6 +31,13 @@ public class MemberController {
 		
 		MemberVO vo = memberService.getMemberIdCheck(mid);
 		
-		return "member/memberLogin";
+		session.setAttribute("sMid", mid);
+		session.setAttribute("sNickName", vo.getNickName());
+		
+		//request.setAttribute("msg", "로그인 되었습니다.");
+		//request.setAttribute("url", "member/memberMain");
+		
+		//return "include/message";
+		return "member/memberMain";
 	}
 }
