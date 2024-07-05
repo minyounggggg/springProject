@@ -14,50 +14,71 @@
 		justify-content: center;
 		align-items: center;
 		/* height: 100vh; */
-		background-color : #eee;
-		padding-top : 150px;
+		background-color : #fff;
 	}
-	.loginForm{
-		display : flex;
+	.inner{
 		width : 1300px;
+		margin : 0 auto;
+	}
+	.header{
+		background-color : #999;
+		height : 300px;
+		width : 100%;
+	}
+	.secStyle{
+		background-color : #eee;
 		border-radius : 30px;
 		box-shadow : 8px 15px 10px rgba(0, 0, 50, 0.1);
+		margin : 10px;
+	}
+	.sec1{
+		display : flex;
 	}
 	.sec01{
-		/* background-image : url("${ctp}/resources/images/mainLogin/testBG.jpg"); */
-		background-color : #999999;
 		float : left;
 		width : 50%;
-		height: 500px;
-		border-radius : 30px 0 0 30px;
+		height: 300px;
 	}
 	.sec02{
-		/* background : url("${ctp}/resources/images/mainLogin/testBG.jpg"); */
-		background-color : #f9f9f9;
 		float : left;
 		width : 50%;
+		height: 300px;
+	}
+	.sec03{
+		clear : both;
 		height: 500px;
-		border-radius : 0 30px 30px 0;
-		padding : 30px;
 	}
 </style>
 <script>
 	'use strict';
 	
-	function idCheck() {
-		let mid = $("#mid").val();
-		if(mid.trim() == ""){
-			alert("아이디를 입력해주세요.");
-			$("#mid").focus();
-			return false;
-		}
-		
-	}
+	
+	
 </script>
 </head>
 <body>
-	<div class="loginForm">
-		<h4>로그인메인</h4>
+<!-- 
+	<header>
+		<div>
+			header
+		</div>
+	</header>
+	 -->
+	<div class="inner">
+		<div class="header">
+			header
+		</div>
+		<div class="sec1">
+			<section class="secStyle sec01">
+				<p>sec01</p>
+			</section>
+			<section class="secStyle sec02">
+				<p>sec02</p>
+			</section>
+		</div>
+		<section class="secStyle sec03">
+			<p>sec03</p>
+		</section>
 	</div>
 </body>
 </html>

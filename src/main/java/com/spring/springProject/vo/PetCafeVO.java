@@ -3,7 +3,7 @@ package com.spring.springProject.vo;
 import lombok.Data;
 
 @Data
-public class PetCafe {
+public class PetCafeVO {
 	private int idx;
 	private String placeName;
 	private String category;

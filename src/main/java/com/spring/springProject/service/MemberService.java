@@ -6,4 +6,6 @@ public interface MemberService {
 
 	MemberVO getMemberIdCheck(String mid);
 
+	MemberVO getmemberNickCheck(String nickName);
+
 }

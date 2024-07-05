@@ -24,7 +24,7 @@
 		box-shadow : 8px 15px 10px rgba(0, 0, 50, 0.1);
 	}
 	.sec01{
-		/* background-image : url("${ctp}/resources/images/mainLogin/testBG.jpg"); */
+		/* background-image : url("${ctp}/resources/images/memberLogin/testBG.jpg"); */
 		background-color : #999999;
 		float : left;
 		width : 50%;
@@ -32,7 +32,7 @@
 		border-radius : 30px 0 0 30px;
 	}
 	.sec02{
-		/* background : url("${ctp}/resources/images/mainLogin/testBG.jpg"); */
+		/* background : url("${ctp}/resources/images/memberLogin/testBG.jpg"); */
 		background-color : #f9f9f9;
 		float : left;
 		width : 50%;
@@ -45,7 +45,8 @@
 <body>
 	<div class="loginForm">
 		<section class="sec01">
-			<%-- <img src="${ctp}/resources/images/mainLogin/test01.jpg" /> --%>
+			<%-- <img src="${ctp}/resources/images/memberLogin/test01.jpg" /> --%>
+			<!-- ios 이미지 편집 후 넣어주세용 -->
 		</section>
 		<section class="sec02">
 			<form name="myform" method="post">

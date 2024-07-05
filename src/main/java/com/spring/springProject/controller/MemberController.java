@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.springProject.service.MemberService;
 import com.spring.springProject.vo.MemberVO;
@@ -40,4 +41,44 @@ public class MemberController {
 		//return "include/message";
 		return "member/memberMain";
 	}
+	
+	@RequestMapping(value = "/memberJoin", method = RequestMethod.GET)
+	public String memberJoinGet() {
+		return "member/memberJoin";
+	}
+	
+	@RequestMapping(value = "/memberJoin", method = RequestMethod.POST)
+	public String memberJoinPost() {
+		
+		
+		
+		return "member/memberMain";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/memberIdCheck", method = RequestMethod.POST)
+	public String memberIdCheckPost(String mid) {
+		
+		MemberVO vo = memberService.getMemberIdCheck(mid);
+		
+		if(vo != null) return "1";
+		else return "0";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/memberNickCheck", method = RequestMethod.POST)
+	public String memberNickCheckPost(String nickName) {
+		
+		MemberVO vo = memberService.getmemberNickCheck(nickName);
+		
+		if(vo != null) return "1";
+		else return "0";
+	}
+	
+	@RequestMapping(value = "/memberMain", method = RequestMethod.GET)
+	public String memberMainGet() {
+		return "member/memberMain";
+	}
+	
+	
 }
