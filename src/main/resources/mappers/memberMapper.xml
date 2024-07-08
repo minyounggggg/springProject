@@ -9,5 +9,11 @@
 	<select id="getmemberNickCheck" resultType="com.spring.springProject.vo.MemberVO">
 		select * from member where nickName = #{nickName};
 	</select>
-
+	
+	
+	<!-- 
+	<insert id="setMemberJoinOK">
+		insert into member values ();
+	</insert>
+ -->
 </mapper>

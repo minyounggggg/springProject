@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.springProject.service.MemberService;
 import com.spring.springProject.vo.MemberVO;
@@ -25,7 +26,9 @@ public class MemberController {
 	@Autowired
 	BCryptPasswordEncoder passwordEncoder;
 	
-
+	// 큐알 로그인할꺼면 누르면 큐알코드 발행 시킨 후 
+	
+	
 	@RequestMapping(value = "/memberLogin", method = RequestMethod.GET)
 	public String memberLoginGet(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
@@ -73,9 +76,9 @@ public class MemberController {
 			//request.setAttribute("url", "member/memberMain");
 			
 			//return "include/message";
-			return "member/memberMain";
+			return "redirect:/message/memberLoginOK?mid="+mid;
 		}
-		else return "member/memberLogin";
+		else return "redirect:/message/memberLoginNO";
 		
 	}
 	
@@ -84,13 +87,21 @@ public class MemberController {
 		return "member/memberJoin";
 	}
 	
-	@RequestMapping(value = "/memberJoin", method = RequestMethod.POST)
-	public String memberJoinPost() {
-		
-		
-		
-		return "member/memberMain";
-	}
+//	@RequestMapping(value = "/memberJoin", method = RequestMethod.POST)
+//	public String memberJoinPost(MemberVO vo, MultipartFile fName) {
+//		if(memberService.getMemberIdCheck(vo.getMid()) != null) return "redirect:/message/memberJoinIdNO";
+//		if(memberService.getmemberNickCheck(vo.getNickName()) != null) return "redirect:/message/memberJoinNickNO";
+//		
+//		vo.setPwd(passwordEncoder.encode(vo.getPwd()));
+//		
+//		if(!fName.getOriginalFilename().equals(""))vo.setPhoto(memberService.fileUpload(fName, vo.getMid()));
+//		else vo.setPhoto("noimage.png");
+//		
+//		int res = memberService.setMemberJoinOK(vo);
+//		
+//		if(res != 0) return "redirect:/message/memberJoinOK";
+//		else return "redirect:/message/memberJoinNO";
+//	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/memberIdCheck", method = RequestMethod.POST)
