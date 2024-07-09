@@ -6,8 +6,10 @@ import com.spring.springProject.vo.MemberVO;
 
 public interface MemberDAO {
 
-	MemberVO getMemberIdCheck(@Param("mid") String mid);
+	public MemberVO getMemberIdCheck(@Param("mid") String mid);
 
-	MemberVO getmemberNickCheck(@Param("nickName") String nickName);
+	public MemberVO getmemberNickCheck(@Param("nickName") String nickName);
+
+	//public int setMemberJoinOK(@Param("vo") MemberVO vo);
 
 }

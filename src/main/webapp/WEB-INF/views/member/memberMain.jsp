@@ -23,6 +23,11 @@
 
 <style>
 	*{font-family: 'Noto Sans KR', sans-serif; }
+	a {  
+		text-decoration: none;
+		color: inherit;
+	}
+	a:link{text-decoration: none;}
 	body{
 		/* display : flex;
 		justify-content: center;
@@ -35,11 +40,26 @@
 		width : 1300px;
 		margin : 0 auto;
 	}
+	nav{
+		padding : 15px 0 25px;
+		box-shadow : 0px 5px 5px rgba(0, 0, 50, 0.1);
+		position: fixed;
+		width : 100%;
+		background-color : #fff;
+		z-index : 99;
+	}
+	nav .nav{
+		text-align: center;
+	    display: flex;
+	    justify-content: space-between;
+	}
 	header{
 		background-color : #fcfdff;
 		height : 500px;
 		width : 100%;
-		padding : 80px 0;
+	}
+	header .header-sec01{
+		padding-top : 180px;
 	}
 	header div span{
 		font-size : 55px;
@@ -49,10 +69,9 @@
 	.swiper {
       width: 100%;
       height: 420px;
-      padding : 10px;
-      margin-bottom : 80px;
+      padding : 10px 0;
+      margin : 120px 0 80px;
     }
-
     .swiper-slide {
       text-align: center;
       font-size: 18px;
@@ -66,7 +85,6 @@
       border-radius : 30px;
 	  box-shadow : 5px 8px 8px rgba(0, 0, 50, 0.2);
     }
-
     .swiper-slide img {
       display: block;
       width: 100%;
@@ -74,14 +92,12 @@
       object-fit: cover;
       border-radius : 30px;
     }
-    
 	.secStyle{
 		background-color : #f7f7f7;
 		border-radius : 30px;
 		box-shadow : 8px 15px 10px rgba(0, 0, 50, 0.1);
 		margin : 10px;
 	}
-	
 	.sec1{
 		float : left;
 		width : 50%;
@@ -117,8 +133,23 @@
 </script>
 </head>
 <body>
+	<nav>
+		<div class="nav-login inner text-right">
+			<a href="#">로그인</a> &nbsp;|&nbsp; <a href="#">회원가입</a>
+		</div>
+		<hr/>
+		<div class="nav inner" style="font-size:16px;font-weight:700;">
+			<a href="#">Only-E.W</a>
+			<a href="#">동네수다</a>
+			<a href="#">제품후기</a>
+			<a href="#">온동네병원</a>
+			<a href="#">카페</a>
+			<a href="#">식당</a>
+			<a href="#">펜션&글램핑</a>
+		</div>
+	</nav>
 	<header>
-		<div class="inner">
+		<div class="header-sec01 inner">
 			<div class="sec1">
 				<p style="font-size:20px;font-weight:700;color:#578de4;margin-top:20px;">Enjoy With</p>
 				<p style="font-size:55px;font-weight:700;color:#578de4;">반려동물<span>과</span> 함께 <span>즐기고싶어</span></p>
@@ -140,6 +171,7 @@
 		      <div class="swiper-slide"><img src="${ctp}/resources/images/memberMain/main_event01.png"/></div>
 		      <div class="swiper-slide"><img src="${ctp}/resources/images/memberMain/main_event02.png"/></div>
 		      <div class="swiper-slide"><img src="${ctp}/resources/images/memberMain/main_event01.png"/></div>
+		      <div class="swiper-slide"><img src="${ctp}/resources/images/memberMain/main_event02.png"/></div>
 		    </div>
 		    <div class="swiper-pagination"></div>
 	  	</div>
@@ -169,9 +201,11 @@
 				<p style="font-size:40px;font-weight:700;color:#333333;margin-bottom:60px;">반려동물<span>과</span> 함께 <span>즐기고싶어</span></p>
 			</section>
 			<section style="margin-bottom:30px">
-				<img src="${ctp}/resources/images/memberMain/imsi01.png" style="width:33%"/>
-				<img src="${ctp}/resources/images/memberMain/imsi02.png" style="width:33%"/>
-				<img src="${ctp}/resources/images/memberMain/imsi03.png" style="width:33%"/>
+			<!-- 임시 이미지 교체하기 (후기 이모지 혹은 검색 키워드 적어놓은 이모지 카드 나열해놓기) -->
+				<img src="${ctp}/resources/images/memberMain/imsi01.png" style="width:25%"/>
+				<img src="${ctp}/resources/images/memberMain/imsi02.png" style="width:25%"/>
+				<img src="${ctp}/resources/images/memberMain/imsi03.png" style="width:25%"/>
+				<img src="${ctp}/resources/images/memberMain/imsi03.png" style="width:24%"/>
 			</section>
 			<section class="secStyle sec02-contentBox">
 				<p>sec03</p>

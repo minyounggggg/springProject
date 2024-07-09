@@ -30,7 +30,7 @@
 		box-shadow : 8px 15px 10px rgba(0, 0, 50, 0.1);
 	}
 	.sec01{
-		background-image : url("${ctp}/resources/images/memberLogin/login_bg_02.png");
+		/* background-image : url("${ctp}/resources/images/memberLogin/login_bg_02.png"); */
 		background-color : #999999;
 		float : left;
 		width : 50%;
