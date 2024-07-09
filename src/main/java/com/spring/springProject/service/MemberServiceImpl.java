@@ -44,9 +44,9 @@ public class MemberServiceImpl implements MemberService {
 		return sFileName;
 	}
 
-//	@Override
-//	public int setMemberJoinOK(MemberVO vo) {
-//		return memberDAO.setMemberJoinOK(vo);
-//	}
+	@Override
+	public int setMemberJoinOK(MemberVO vo) {
+		return memberDAO.setMemberJoinOK(vo);
+	}
 	
 }

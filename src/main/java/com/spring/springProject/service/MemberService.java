@@ -12,6 +12,6 @@ public interface MemberService {
 
 	public String fileUpload(MultipartFile fName, String mid);
 
-	//public int setMemberJoinOK(MemberVO vo);
+	public int setMemberJoinOK(MemberVO vo);
 
 }

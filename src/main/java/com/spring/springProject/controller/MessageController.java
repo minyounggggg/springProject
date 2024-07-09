@@ -24,7 +24,7 @@ public class MessageController {
 			model.addAttribute("url", "/member/memberMain");
 		}
 		else if(msgFlag.equals("memberLoginNO")) {
-			model.addAttribute("msg", "로그인 오류! 다시 시도해주세요.");
+			model.addAttribute("msg", "입력하신 아이디 또는 비밀번호가 다릅니다.\\n다시 입력해주세요.");
 			model.addAttribute("url", "/member/memberLogin");
 		}
 		else if(msgFlag.equals("memberJoinIdNO")) {
@@ -36,12 +36,16 @@ public class MessageController {
 			model.addAttribute("url", "/member/memberJoin");
 		}
 		else if(msgFlag.equals("memberJoinOK")) {
-			model.addAttribute("msg", "회원가입이 완료되었습니다.\n다시 로그인해주세요.");
+			model.addAttribute("msg", "회원가입이 완료되었습니다. 다시 로그인해주세요.");
 			model.addAttribute("url", "/member/memberLogin");
 		}
 		else if(msgFlag.equals("memberJoinNO")) {
 			model.addAttribute("msg", "회원가입 오류! 다시 시도해주세요.");
 			model.addAttribute("url", "/member/memberJoin");
+		}
+		else if(msgFlag.equals("memberLogout")) {
+			model.addAttribute("msg", "로그아웃이 정상적으로 완료되었습니다.");
+			model.addAttribute("url", "/member/memberMain");
 		}
 		
 		

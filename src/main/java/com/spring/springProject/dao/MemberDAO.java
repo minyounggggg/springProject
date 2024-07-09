@@ -10,6 +10,6 @@ public interface MemberDAO {
 
 	public MemberVO getmemberNickCheck(@Param("nickName") String nickName);
 
-	//public int setMemberJoinOK(@Param("vo") MemberVO vo);
+	public int setMemberJoinOK(@Param("vo") MemberVO vo);
 
 }

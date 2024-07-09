@@ -11,9 +11,9 @@
 	</select>
 	
 	
-	<!-- 
+	
 	<insert id="setMemberJoinOK">
-		insert into member values ();
+		insert into member values (default, #{vo.mid}, #{vo.pwd}, #{vo.nickName},#{vo.address}, #{vo.email}, default, default, default, default, default, default);
 	</insert>
- -->
+
 </mapper>

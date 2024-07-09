@@ -140,7 +140,12 @@
 <body>
 	<nav>
 		<div class="nav-login inner text-right">
-			<a href="#">로그인</a> &nbsp;|&nbsp; <a href="#">회원가입</a>
+			<c:if test="${empty sNickName}">
+				<a href="${ctp}/member/memberLogin">로그인</a> &nbsp;|&nbsp; <a href="${ctp}/member/memberJoin">회원가입</a>
+			</c:if>
+			<c:if test="${!empty sNickName}">
+				<p style="font-size:14px;font-weight:600;color:#578de4;">${sNickName}<span style="font-size:14px;font-weight:400;color:#333333;">님 안녕하세요! &nbsp;|&nbsp; <a href="${ctp}/member/memberLogout">로그아웃</a></span></p>
+			</c:if>
 		</div>
 		<hr/>
 		<div class="nav inner" style="font-size:16px;font-weight:700;">
