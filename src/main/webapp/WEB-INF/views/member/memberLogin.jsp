@@ -59,9 +59,9 @@
 			<form name="myform" method="post">
 				<img src="${ctp}/resources/images/memberLogin/loginicon01.png" style="width:50px"/>
 				<p style="color:#2F2F2F;font-size:36px; font-weight:700;margin:20px 0;">LOGIN</p>
-		    	<input type="text" value="admin" name="mid" placeholder="User ID" autofocus required class="form-control mb-1" style="height:45px"/>
-		       	<input type="checkbox" name="idSave" checked class="mb-3 ml-2"/> 아이디 저장
-			    <input type="password" value="1234" name="pwd" placeholder="Password" required class="form-control mb-4" style="height:45px"/>
+		    	<input type="text" name="mid" id="mid" placeholder="User ID" autofocus required class="form-control mb-1" style="height:45px"/>
+		       	<input type="checkbox" name="idSave" id="idSave" checked class="mb-3 ml-2"/> 아이디 저장
+			    <input type="password" name="pwd" placeholder="Password" required class="form-control mb-4" style="height:45px"/>
 			    <button type="submit" class="btn btn-primary form-control mb-2">로그인</button>
 				<button type="button" onclick="location.href='${ctp}/member/memberJoin';" class="btn btn-primary form-control">회원가입</button>
 		  	</form>

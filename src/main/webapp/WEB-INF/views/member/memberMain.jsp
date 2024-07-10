@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>memberJoin.jsp</title>
 <jsp:include page="/WEB-INF/views/include/bs4.jsp" />
+<link rel="icon" href="${ctp}/resources/favicon/love.png">
 
 <!-- 구글폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,13 +42,17 @@
 		margin : 0 auto;
 	}
 	nav{
-		padding : 15px 0 25px;
+		padding : 10px 0 20px;
 		box-shadow : 0px 5px 5px rgba(0, 0, 50, 0.1);
 		position: fixed;
 		width : 100%;
 		background-color : #fff;
 		z-index : 99;
 	}
+	nav .nav-login{
+		font-size : 14px;
+	}
+	nav hr {margin : 10px 0 20px}
 	nav .nav{
 		text-align: center;
 	    display: flex;
@@ -135,7 +140,12 @@
 <body>
 	<nav>
 		<div class="nav-login inner text-right">
-			<a href="#">로그인</a> &nbsp;|&nbsp; <a href="#">회원가입</a>
+			<c:if test="${empty sNickName}">
+				<a href="${ctp}/member/memberLogin">로그인</a> &nbsp;|&nbsp; <a href="${ctp}/member/memberJoin">회원가입</a>
+			</c:if>
+			<c:if test="${!empty sNickName}">
+				<p style="font-size:14px;font-weight:600;color:#578de4;">${sNickName}<span style="font-size:14px;font-weight:400;color:#333333;">님 안녕하세요! &nbsp;|&nbsp; <a href="${ctp}/member/memberLogout">로그아웃</a></span></p>
+			</c:if>
 		</div>
 		<hr/>
 		<div class="nav inner" style="font-size:16px;font-weight:700;">

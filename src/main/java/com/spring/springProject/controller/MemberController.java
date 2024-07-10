@@ -28,7 +28,7 @@ public class MemberController {
 	
 	// 큐알 로그인할꺼면 누르면 큐알코드 발행 시킨 후 
 	
-	
+	// 로그인 폼
 	@RequestMapping(value = "/memberLogin", method = RequestMethod.GET)
 	public String memberLoginGet(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
@@ -44,6 +44,7 @@ public class MemberController {
 		return "member/memberLogin";
 	}
 	
+	//로그인 처리
 	@RequestMapping(value = "/memberLogin", method = RequestMethod.POST)
 	public String memberLoginPost(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 		String mid, String pwd, String idSave) {
@@ -79,7 +80,12 @@ public class MemberController {
 			return "redirect:/message/memberLoginOK?mid="+mid;
 		}
 		else return "redirect:/message/memberLoginNO";
-		
+	}
+	
+	@RequestMapping(value = "/memberLogout", method = RequestMethod.GET)
+	public String memberLogoutGet(HttpSession session) {
+		session.invalidate();
+		return "redirect:/message/memberLogout";
 	}
 	
 	@RequestMapping(value = "/memberJoin", method = RequestMethod.GET)
@@ -87,21 +93,21 @@ public class MemberController {
 		return "member/memberJoin";
 	}
 	
-//	@RequestMapping(value = "/memberJoin", method = RequestMethod.POST)
-//	public String memberJoinPost(MemberVO vo, MultipartFile fName) {
-//		if(memberService.getMemberIdCheck(vo.getMid()) != null) return "redirect:/message/memberJoinIdNO";
-//		if(memberService.getmemberNickCheck(vo.getNickName()) != null) return "redirect:/message/memberJoinNickNO";
-//		
-//		vo.setPwd(passwordEncoder.encode(vo.getPwd()));
-//		
+	@RequestMapping(value = "/memberJoin", method = RequestMethod.POST)
+	public String memberJoinPost(MemberVO vo) {			//, MultipartFile fName
+		if(memberService.getMemberIdCheck(vo.getMid()) != null) return "redirect:/message/memberJoinIdNO";
+		if(memberService.getmemberNickCheck(vo.getNickName()) != null) return "redirect:/message/memberJoinNickNO";
+		
+		vo.setPwd(passwordEncoder.encode(vo.getPwd()));
+		
 //		if(!fName.getOriginalFilename().equals(""))vo.setPhoto(memberService.fileUpload(fName, vo.getMid()));
 //		else vo.setPhoto("noimage.png");
-//		
-//		int res = memberService.setMemberJoinOK(vo);
-//		
-//		if(res != 0) return "redirect:/message/memberJoinOK";
-//		else return "redirect:/message/memberJoinNO";
-//	}
+		
+		int res = memberService.setMemberJoinOK(vo);
+		
+		if(res != 0) return "redirect:/message/memberJoinOK";
+		else return "redirect:/message/memberJoinNO";
+	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/memberIdCheck", method = RequestMethod.POST)
