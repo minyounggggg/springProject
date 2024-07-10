@@ -1,4 +1,4 @@
-package com.spring.springProject.service;
+package com.spring.javaclassS15.service;
 
 import java.util.UUID;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.spring.springProject.common.JavaclassProvide;
-import com.spring.springProject.dao.MemberDAO;
-import com.spring.springProject.vo.MemberVO;
+import com.spring.javaclassS15.common.JavaclassProvide;
+import com.spring.javaclassS15.dao.MemberDAO;
+import com.spring.javaclassS15.vo.MemberVO;
 
 @Service
 public class MemberServiceImpl implements MemberService {

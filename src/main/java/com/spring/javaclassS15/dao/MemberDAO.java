@@ -1,8 +1,8 @@
-package com.spring.springProject.dao;
+package com.spring.javaclassS15.dao;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.spring.springProject.vo.MemberVO;
+import com.spring.javaclassS15.vo.MemberVO;
 
 public interface MemberDAO {
 

@@ -1,4 +1,4 @@
-package com.spring.springProject.controller;
+package com.spring.javaclassS15.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.spring.springProject.service.MemberService;
-import com.spring.springProject.vo.MemberVO;
+import com.spring.javaclassS15.service.MemberService;
+import com.spring.javaclassS15.vo.MemberVO;
 
 @Controller
 @RequestMapping("/member")

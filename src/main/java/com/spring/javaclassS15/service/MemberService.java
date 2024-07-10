@@ -1,8 +1,8 @@
-package com.spring.springProject.service;
+package com.spring.javaclassS15.service;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.spring.springProject.vo.MemberVO;
+import com.spring.javaclassS15.vo.MemberVO;
 
 public interface MemberService {
 

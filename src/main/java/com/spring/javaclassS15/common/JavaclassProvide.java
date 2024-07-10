@@ -1,4 +1,4 @@
-package com.spring.springProject.common;
+package com.spring.javaclassS15.common;
 
 import java.io.File;
 import java.io.FileOutputStream;
